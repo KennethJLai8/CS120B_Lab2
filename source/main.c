@@ -17,27 +17,30 @@ int main(void) {
 DDRA = 0x00; PORTA = 0xFF; // Configure port A's 8 pins as inputs
 DDRC = 0xFF; PORTC = 0x00;
 
+//unsigned char tmpA0 = PINA & 0x01;
+//unsigned char tmpA1 = PINA & 0x02;
+//unsigned char tmpA2 = PINA & 0x04;
+//unsigned char tmpA3 = PINA & 0x08;
+//unsigned char tmpA = 0x00; // Temporary variable to hold the value of A
+//unsigned char cntavail = 0;
+while(1) {
 unsigned char tmpA0 = PINA & 0x01;
 unsigned char tmpA1 = PINA & 0x02;
 unsigned char tmpA2 = PINA & 0x04;
 unsigned char tmpA3 = PINA & 0x08;
-//unsigned char tmpA = 0x00; // Temporary variable to hold the value of A
-//unsigned char cntavail = 0;
-while(1) {
-
 unsigned char cntavail = 0x00;
 
 if(!tmpA0){
-cntavail = cntavail + 1;
+cntavail++;
 }
 if(!tmpA1){
-cntavail = cntavail + 1;
+cntavail++;
 }
 if(!tmpA2){
-cntavail = cntavail + 1;
+cntavail++;
 }
 if(!tmpA3){
-cntavail = cntavail + 1;
+cntavail++;
 }
 
 PORTC = cntavail;
