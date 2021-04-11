@@ -37,7 +37,7 @@ unsigned char D_output = 0x00;
 
 
 
-D_output = total_weight << 2;
+D_output = total_weight >> 2;
 
 if(total_weight > 0x8C){
 D_output = (D_output & 0xFE) | 0x01;// might change it to + 1
