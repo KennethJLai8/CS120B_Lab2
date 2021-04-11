@@ -1,7 +1,7 @@
 /*	Author: klai022
  *  Partner(s) Name: Kenneth Lai
  *	Lab Section: 023
- *	Assignment: Lab 2  Exercise 3
+ *	Assignment: Lab 2  Exercise 4
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -40,10 +40,10 @@ unsigned char D_output = 0x00;
 D_output = total_weight << 2;
 
 if(total_weight > 0x8C){
-D_output = D_output | 0x01;// might change it to + 1
+D_output = (D_output & 0xFE) | 0x01;// might change it to + 1
 }
 if((weight1 - weight3) > 80 || (weight3 - weight1) > 80){
-D_output = D_output | 0x02;
+D_output = (D_output & 0xFC) | 0x02;
 }
 
 
