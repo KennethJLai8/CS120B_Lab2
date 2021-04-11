@@ -1,7 +1,7 @@
 /*	Author: klai022
  *  Partner(s) Name: Kenneth Lai
  *	Lab Section: 023
- *	Assignment: Lab 2  Exercise 2
+ *	Assignment: Lab 2  Exercise 3
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -29,6 +29,8 @@ unsigned char tmpA1 = PINA & 0x02;
 unsigned char tmpA2 = PINA & 0x04;
 unsigned char tmpA3 = PINA & 0x08;
 unsigned char cntavail = 0x00;
+//unsigned char bin_num = 0x00;
+
 
 if(!tmpA0){
 cntavail++;
@@ -42,6 +44,12 @@ cntavail++;
 if(!tmpA3){
 cntavail++;
 }
+if(tmpA0 && tmpA1 && tmpA2 && tmpA3){
+cntavail = cntavail + 128;
+}
+
+
+
 
 PORTC = cntavail;
 }
