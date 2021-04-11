@@ -5,9 +5,9 @@ tests = [ {'description': 'PINA: 0x00 => PORTC: 0x04',   # no spots filled
     'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 5 } ],
     'expected': [('PORTC',0x04)],
     },
-    {'description': 'PINA: 0x0F => PORTC: 0x00',# all spots filled
+    {'description': 'PINA: 0x0F => PORTC: 0x80',# all spots filled
     'steps': [ {'inputs': [('PINA',0x0F)], 'iterations': 5 } ],
-    'expected': [('PORTC',0x00)],
+    'expected': [('PORTC',0x80)],
     },
     {'description': 'PINA: 0x0A => PORTC: 0x02',#A1 and A3 filled
     'steps': [ {'inputs': [('PINA',0x0A)], 'iterations': 5 } ],
